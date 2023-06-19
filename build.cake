@@ -233,6 +233,11 @@ public Pizza(string name,int value,int pizzastok,string size)
   this.size =size;
 }
 
+public void add(int addp)
+{
+  this.stock -= addp;
+}
+
 public menu()
 {
   Console.WriteLine("ピザ注文システム");
@@ -244,7 +249,7 @@ public menu()
 
 }
 
-public order(Pizza[] pizzaarray)
+public order(Pizza[] pizzaarray,string pizzaName,int addpCount)
 {
   While(1){
     Console.WriteLine("ピザの名前を入力してください：");
@@ -254,11 +259,10 @@ public order(Pizza[] pizzaarray)
   Console.WriteLine("枚数を入力してください：");
   int pnum = Convert.ToInt32(Console.ReadLine());
   foreach (Pizza pizza in pizzaarray){
-      if(pizza.name == name){
-        
+      if(pizza.name == pizzaName){
+        pizza.order(addpCount); 
       }
   }
-  stock-=pizzastok;
   Console.WriteLine("注文を追加する場合は1,終了する場合は0");
   Console.WriteLine("番号を入力：");
   int num = Convert.ToInt32(Console.ReadLine());
