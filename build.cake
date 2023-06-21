@@ -271,6 +271,8 @@ public order(Pizza[] pizzaarray,string pizzaName,int addpCount)
   
 }
 
+
+
 public checkpstock(string name,int value,int pizzastok)
 {
   Console.WriteLine("マルガリータS：" + );
@@ -287,7 +289,7 @@ public addpstock(string name,int value,int pizzastok)
   Console.WriteLine("1.マルガリータ");
   Console.WriteLine("2.ペスカトーレ");
   Console.WriteLine("0.メニューに戻る");
-  Console.WriteLine("番号を入力：" + );
+  Console.WriteLine("番号を入力：");
   
 }
 
@@ -304,16 +306,16 @@ Task("book")
   menu();
   Console.Write("番号を入力：");
   int num = Convert.ToInt32(Console.ReadLine());
-
-  switch(num){
+  While(1){
+    switch(num){
     case1 :
-    
+    order();
     break;
     case2 :
-    
+    checkpstock();
     break;
     case3 :
-    
+    addpstock();
     break;
     case4 :
     
@@ -321,6 +323,8 @@ Task("book")
     default:
     
     break;
+  }
+  
   }
 )}
   
